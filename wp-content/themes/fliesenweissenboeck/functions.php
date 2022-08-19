@@ -2,7 +2,7 @@
 /**
  * Theme Funktionen und allgemeine Definitionen für die Website "fliesen-weissenboeck.at"
  */
- 
+
 
 /* Allgemeine Theme Funktionen */
 
@@ -15,17 +15,69 @@ add_action('after_setup_theme', 'weissenboeck_features');
 
 
 
-/* Importiert Font Awesome */
 
-function weissenboeck_enqueue_icon_stylesheet() {
-	wp_register_style( 'fontawesome', 'https:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
-	wp_enqueue_style( 'fontawesome');
+/* Styles and Scripts */
+
+function weissenboeck_register_styles() {
+
+  // Import FontAwesome
+  wp_register_style( 'fontawesome', get_template_directory_uri() . '/vendor/fontawesome-free-5.14.0-web/css/all.min.css' );
+  wp_enqueue_style( 'fontawesome' );
+
+  // Import Bulma Framework
+  wp_register_style( 'bulma', get_template_directory_uri() . '/vendor/bulma-0.9.0/css/bulma.min.css' );
+  wp_enqueue_style( 'bulma' );
+
+  // Import Cookie Script Stylesheets
+  wp_register_style( 'cookie-style', get_template_directory_uri() . '/assets/styles/dywc.css' );
+  wp_enqueue_style( 'cookie-style' );
+
+  // Import Theme Styles via style.css
+  wp_register_style( 'style', get_stylesheet_uri() );
+  wp_enqueue_style( 'style' );
+
 }
 
-add_action( 'wp_enqueue_scripts', 'weissenboeck_enqueue_icon_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'weissenboeck_register_styles' );
 
 
- 	
+
+function weissenboeck_register_scripts() {
+
+  // Import JQery 1.4.3
+  wp_register_script( 'jquery-1-4-3', get_template_directory_uri() . '/vendor/jquery-1.4.3/jquery.min.js', '', null, true );
+  wp_enqueue_script( 'jquery-1-4-3' );
+
+  // Import JQery 1.11.0
+  wp_register_script( 'jquery-1-11-0', '//code.jquery.com/jquery-1.11.0.min.js', '', null, true );
+  wp_enqueue_script( 'jquery-1-11-0' );
+
+  // Import JQery Migrate 1.2.1
+  wp_register_script( 'jquery--migrate-1-2-1', '//code.jquery.com/jquery-migrate-1.2.1.min.js', '', null, true );
+  wp_enqueue_script( 'jquery--migrate-1-2-1' );
+
+  // Import Button Back-to-Top
+  wp_register_script( 'button-back-to-top', get_template_directory_uri() . '/assets/scripts/button-back-to-top.js', '', null, true );
+  wp_enqueue_script( 'button-back-to-top' );
+
+  // Import Cookie Notice Scripts
+  wp_register_script( 'dywc', get_template_directory_uri() . '/assets/scripts/dywc.js', '', null, true );
+  wp_enqueue_script( 'dywc' );
+
+  wp_register_script( 'cookie-notice', get_template_directory_uri() . '/assets/scripts/cookie-notice.js', '', null, true );
+  wp_enqueue_script( 'cookie-notice' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'weissenboeck_register_scripts' );
+
+
+
+
+
+
+
+
 /* Menü Support */
 
 function weissenboeck_register_menu() {
@@ -34,7 +86,7 @@ function weissenboeck_register_menu() {
 }
 
 add_action( 'after_setup_theme', 'weissenboeck_register_menu' );
-	
+
 
 
 /* Include the Theme's Custom Shortcode Library */
@@ -42,22 +94,22 @@ add_action( 'after_setup_theme', 'weissenboeck_register_menu' );
 include('custom-shortcodes.php');
 
 
-	
-	
+
+
 /* Beitragsformate */
-	
+
 add_theme_support( 'post-formats', array( 'gallery' ) );
-	
- 	
+
+
 
 /* Beitragsbilder */
-	
-add_theme_support( 'post-thumbnails' ); 
-	
+
+add_theme_support( 'post-thumbnails' );
+
 
 
 /* Adds the Slug to the body tag's class  */
- 
+
 function add_slug_body_class( $classes ) {
      global $post;
   if ( isset( $post ) ) {
@@ -84,17 +136,17 @@ add_filter( 'pre_comment_user_ip', 'replace_comment_ip', 50);
 
 
 function weissenboeck_post_types() {
-	add_post_type_support( 'team', 'thumbnail' );    
+	add_post_type_support( 'team', 'thumbnail' );
 	add_post_type_support( 'team', 'excerpt' );
-	
+
 	add_filter( 'wpex_gallery_metabox_post_types', function( $types ) {
 	$types[] = 'gallery';
 	return $types;
 } );
-	
-	
+
+
 	/* Custom Post Type "TEAM */
-	
+
 	register_post_type('team', array(
 		'show_in_rest' => true,
 		'public' => true,
@@ -107,12 +159,12 @@ function weissenboeck_post_types() {
 			'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
 		),
 		'menu_icon' => 'dashicons-format-status'
-		
+
 	));
-	
-	
+
+
 	/* Custom Post Type "GALERIE */
-	
+
 	register_post_type( 'project_gallery', array(
 		'show_in_rest' => true,
 		'public' => true,
@@ -131,8 +183,8 @@ function weissenboeck_post_types() {
         'publicly_queryable'  => false,
         'menu_icon' => 'dashicons-format-gallery'
     ));
-	
-	
+
+
 }
 
 add_action('init', 'weissenboeck_post_types');
@@ -163,23 +215,23 @@ function weissenboeck_preview_thumb_column($column_name, $post_ID) {
     }
 }
 add_action('manage_posts_custom_column', 'weissenboeck_preview_thumb_column', 10, 2);
- 
- 
- 
-/* --- CUSTOM LOGIN BEREICH --- */  
- 
-/* Eigenes Styling des Login-Bereichs */ 
+
+
+
+/* --- CUSTOM LOGIN BEREICH --- */
+
+/* Eigenes Styling des Login-Bereichs */
 
 function custom_login_stylesheet() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
     wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/style-login.js' );
 }
 
-add_action( 'login_enqueue_scripts', 'custom_login_stylesheet' ); 
- 
- 
-/* Funktion "Remember-me" standardmäßig aktivieren */  
- 
+add_action( 'login_enqueue_scripts', 'custom_login_stylesheet' );
+
+
+/* Funktion "Remember-me" standardmäßig aktivieren */
+
 function login_checked_remember_me() {
 add_filter( 'login_footer', 'rememberme_checked' );
 }
@@ -188,26 +240,26 @@ add_action( 'init', 'login_checked_remember_me' );
 
 function rememberme_checked() {
 echo "<script>document.getElementById('rememberme').checked = true;</script>";
-} 
- 
-	
-/* Standardmößige Fehlermeldung beim Anmelden überschreiben */ 
+}
+
+
+/* Standardmößige Fehlermeldung beim Anmelden überschreiben */
 
 function login_error_override()
 {
     return 'Die Zugangsdaten sind leider nicht korrekt.';
 }
 
-add_filter('login_errors', 'login_error_override');	
+add_filter('login_errors', 'login_error_override');
 
 
 
-/* Umleitung der standardmäßigen Login-Seite auf die Custom Login Page */ 
+/* Umleitung der standardmäßigen Login-Seite auf die Custom Login Page */
 
 function redirect_login_page() {
   $login_page  = home_url( '/login/' );
   $page_viewed = basename($_SERVER['REQUEST_URI']);
- 
+
   if( $page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
     wp_redirect($login_page);
     exit;
@@ -230,7 +282,7 @@ add_action('init','redirect_login_page');
  * @param object $user Logged user's data.
  * @return string
  */
- 
+
 function my_login_redirect( $redirect_to, $request, $user ) {
     //is there a user to check?
     if ( isset( $user->roles ) && is_array( $user->roles ) ) {
@@ -245,14 +297,14 @@ function my_login_redirect( $redirect_to, $request, $user ) {
         return $redirect_to;
     }
 }
- 
+
 add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
 
 
 
 
 
-/* Abfangen der Login-Fehlversuche */ 
+/* Abfangen der Login-Fehlversuche */
 
 function login_failed() {
   $login_page  = home_url( '/login/' );
@@ -261,8 +313,8 @@ function login_failed() {
 }
 
 add_action( 'wp_login_failed', 'login_failed' );
- 
- 
+
+
 function verify_username_password( $user, $username, $password ) {
   $login_page  = home_url( '/login/' );
     if( $username == "" || $password == "" ) {
@@ -277,7 +329,7 @@ add_filter( 'authenticate', 'verify_username_password', 1, 3);
 
 
 
-/* Abfangen der Umleitung auf die Login-Seite nach dem Ausloggen */ 
+/* Abfangen der Umleitung auf die Login-Seite nach dem Ausloggen */
 
 function logout_page() {
   $login_page  = home_url( '/login/' );
