@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="de">
+	
+	<head>
+    	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	    <title>Fliesenverlegung Christian Weißenböck - Unsere Erfahrung ist Ihr Vorteil!</title>
+	       
+	     
+	    <!-- Import Bulma Framework-->
+	    <link rel="stylesheet" href='vendor/bulma-0.9.0/css/bulma.min.css'>
+	    
+	    <!-- Import FontAwesome-->
+	    <link rel="stylesheet" href='vendor/fontawesome-free-5.14.0-web/css/all.css'>  
+	     
+	     
+	    <!-- Import Google Fonts-->
+	    <link rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600;700&display=swap'>
+	
+	    
+	    <!-- Import Styles-->
+	    <link rel="stylesheet" href='style.css'>
+	    
+	    
+	    <!-- Button Back-to-Top -->
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+			
+				// Der Button wird mit JavaScript erzeugt und vor dem Ende des body eingebunden.
+				var back_to_top_button = ['<a href="#top" class="back-to-top"><img src="img/topbutton.svg"</a>'].join("");
+				$("body").append(back_to_top_button)
+			
+				// Der Button wird ausgeblendet
+				$(".back-to-top").hide();
+			
+				// Funktion für das Scroll-Verhalten
+				$(function () {
+					$(window).scroll(function () {
+						if ($(this).scrollTop() > 100) { // Wenn 100 Pixel gescrolled wurde
+							$('.back-to-top').fadeIn();
+						} else {
+							$('.back-to-top').fadeOut();
+						}
+					});
+			
+					$('.back-to-top').click(function () { // Klick auf den Button
+						$('body,html').animate({
+							scrollTop: 0
+						}, 800);
+						return false;
+					});
+				});
+			
+			});
+		</script>
+
+	  
+	</head>
+  
+	<body>  
+	  
+		<div class="container container__outer">	 
+  
+			<div class="container top__bar">
+				&nbsp;  
+			</div>
+			  
+			<section class="branding">
+			  
+			    <div class="container">
+				    
+			    	<h1 class="title">
+			        	Fliesen Weißenböck
+			      	</h1>
+			      
+				  	<img class="brand-logo brand-logo--mobile" src="img/fliesen-weissenboeck-logo-hoch.svg" alt="Logo Fliesen Weißenböck (Hochformat)">
+				  	<img class="brand-logo brand-logo--desktop" src="img/fliesen-weissenboeck-logo-quer.svg" alt="Logo Fliesen Weißenböck (Querformat)">
+			           
+				  	<p class="subtitle">
+			        	... unsere Erfahrung ist Ihr Vorteil!
+			      	</p>
+			      
+			    </div>
+		    
+		  	</section>
+		  
+		  
+		  	<div class="slider" >
+			  
+		    	<div class="container">
+			    	
+			    	<img class="slider__image slider__item" src="img/slider-01.jpg" style="width: 100%">
+					<img class="slider__image slider__item" src="img/slider-02.jpg" style="width: 100%">
+					<img class="slider__image slider__item" src="img/slider-03.jpg" style="width: 100%">
+					<img class="slider__image slider__item" src="img/slider-04.jpg" style="width: 100%">
+					<img class="slider__image slider__item" src="img/slider-05.jpg" style="width: 100%">
+					<img class="slider__image slider__item" src="img/slider-06.jpg" style="width: 100%">
+					
+					<div class="button-container" style="width: 100%">
+					    <div class="slider__button-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+					    <div class="slider__button-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+					    
+					    <span class="slider__badge slider__dot w3-hover-white" onclick="currentDiv(1)"></span>
+					    <span class="slider__badge slider__dot w3-hover-white" onclick="currentDiv(2)"></span>
+					    <span class="slider__badge slider__dot w3-hover-white" onclick="currentDiv(3)"></span>
+					
+					</div>
+					
+					<script>
+				
+						var slideIndex = 1;
+						showDivs(slideIndex);
+						
+						function plusDivs(n) {
+						  showDivs(slideIndex += n);
+						}
+						
+						
+						function currentDiv(n) {
+						  showDivs(slideIndex = n);
+						}
+						
+						
+						function showDivs(n) {
+						  var i;
+						  var x = document.getElementsByClassName("slider__item");
+						  var dots = document.getElementsByClassName("slider__dot");
+						  if (n > x.length) {slideIndex = 1}
+						  if (n < 1) {slideIndex = x.length}
+						  
+						  for (i = 0; i < x.length; i++) {
+						    x[i].style.display = "none";  
+						  }
+						  
+						  for (i = 0; i < dots.length; i++) {
+						    dots[i].className = dots[i].className.replace(" w3-white", "");
+						  }
+						  
+						  x[slideIndex-1].style.display = "block";  
+						  dots[slideIndex-1].className += " w3-white";
+						  
+						}
+						
+					</script>
+
+				</div>
+		    
+		  	</div>
+		    	  
+		  	<header>
+
+				<nav class="navbar" role="navigation" aria-label="main navigation">
+
+					<div class="navbar-menu is-active">
+					<!-- shown on mobile -->
+					
+						<ul class="header__menu">
+							
+							<!-- Burger Button to open/show the overlay navigation menu -->
+							
+						  	<li class="header__menu__item"><span onclick="openNav()"><a role="button" class="navbar-burger burger header__menu__item" aria-label="menu" aria-expanded="false" data-target="navbarDesktop"><i class="fa fa-bars"></i></a></span></li>
+							<li class="header__menu__item"><a role="button" class="navbar-burger burger header__menu__item" href="#" target="_blank" aria-label="menu" aria-expanded="false" data-target="navbarDesktop"><i class="fa fa-map"></i></a></li>
+							<li class="header__menu__item"><a role="button" class="navbar-burger burger header__menu__item" href="#" target="_blank" aria-label="menu" aria-expanded="false" data-target="navbarDesktop"><i class="fa fa-envelope"></i></a></li>
+							<li class="header__menu__item"><a role="button" class="navbar-burger burger header__menu__item" href="#" target="_blank" aria-label="menu" aria-expanded="false" data-target="navbarDesktop"><i class="fa fa-phone-alt"></i></a></li>
+						
+						</ul>
+						
+					</div>
+					
+					
+					<script>
+						
+					/* Open when someone clicks on the span element */
+					function openNav() {
+					  document.getElementById("myNav").style.width = "100%";
+					}
+					
+					/* Close when someone clicks on the "x" symbol inside the overlay */
+					function closeNav() {
+					  document.getElementById("myNav").style.width = "0%";
+					}	
+				
+					</script>
+					
+					
+					<!-- OVERLAY -->
+					
+					<div id="myNav" class="overlay">
+					
+					  <!-- Button to close the overlay navigation -->
+					  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					
+					  <!-- Overlay content -->
+					  <div class="overlay-content">
+						  
+						<img class="brand-logo brand-logo--mobile overlay-brand-logo" src="img/fliesen-weissenboeck-logo-hoch.svg" alt="Logo Fliesen Weißenböck (Hochformat)">
+			           
+					  	<p class="subtitle overlay-subtitle">
+				        	... unsere Erfahrung ist Ihr Vorteil!
+				      	</p>  
+						  
+						  
+					    <a class="overlay-navbar-item" href="#">Leistungen</a>
+					    <a class="overlay-navbar-item has-dropdown" href="#">Galerie</a>
+					    
+					    	<div class="navbar-dropdown">
+						        	
+						        <a class="navbar-item overlay-navbar-sub-item">Badverfliesung</a>
+						        <a class="navbar-item overlay-navbar-sub-item">WC-Verfliesung</a>
+						        <a class="navbar-item overlay-navbar-sub-item">Stufenverfliesung</a>
+						        <a class="navbar-item overlay-navbar-sub-item">Steinverblender</a>
+						        <a class="navbar-item ">Bodenverfliesung</a>
+						        <a class="navbar-item overlay-navbar-sub-item">Vorher – Nachher</a>
+						        <hr class="navbar-divider">
+						          
+						    </div>
+
+					    <a class="overlay-navbar-item" href="#">Fliesenschauraum</a>
+					    <a class="overlay-navbar-item" href="#">Partner und Lieferanten</a>
+					    <a class="overlay-navbar-item" href="#">Team</a>
+					    <a class="overlay-navbar-item" href="#">Firmenchronik</a>
+					    <a class="overlay-navbar-item" href="#">Kontakt</a>
+					  </div>
+					  
+					  <hr class="navbar-divider">
+					
+					</div>
+					
+					
+					<div class="navbar-menu">
+					<!-- hidden on mobile -->
+					
+						<div id="navbarDesktop" class="navbar-menu">
+					  
+						    <div class="navbar-start">
+						      <a class="navbar-item">
+						        Leistungen
+						      </a>
+						
+						      <div class="navbar-item has-dropdown is-hoverable">
+						        <a class="navbar-link">
+						          Galerie
+						        </a>
+						
+						        <div class="navbar-dropdown">
+						        	
+						        	<a class="navbar-item">
+						            	Badverfliesung
+						        	</a>
+									
+									<a class="navbar-item">
+						            	WC-Verfliesung
+						        	</a>
+						        	
+									<a class="navbar-item">
+										Stufenverfliesung
+						        	</a>
+						        	
+									<a class="navbar-item">
+						            	Steinverblender
+						        	</a>
+						          
+									<a class="navbar-item">
+						            	Bodenverfliesung
+						        	</a>
+						          
+									<a class="navbar-item">
+										Vorher – Nachher
+						        	</a>
+						          	<hr class="navbar-divider">
+						          
+						        </div>
+						        
+						        <a class="navbar-item">
+						        	Fliesenschauraum
+						        </a>
+						        
+						        <a class="navbar-item">
+							    	Partner und Lieferanten
+							    </a>
+							    
+							    <a class="navbar-item">
+							    	Team
+							    </a>
+							    
+							    <a class="navbar-item">
+							    	Firmenchronik
+							    </a>
+							    
+							    <a class="navbar-item">
+							    	Kontakt
+							    </a>
+						        
+						    </div>
+						    
+						    <div class="navbar-end">
+						    </div>
+						      
+						</div>
+						
+					</div>
+
+			  	</nav>
+				  
+		  	</header>
+		  	
+		  	
+		  	<!-- Responsive Navigation Menu -->
+		  	
+		  	<script>
+					
+				document.addEventListener('DOMContentLoaded', () => {
+
+				// Get all "navbar-burger" elements
+				const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+					
+				// Check if there are any navbar burgers
+				 if ($navbarBurgers.length > 0) {
+					
+					// Add a click event on each of them
+				    $navbarBurgers.forEach( el => {
+				    el.addEventListener('click', () => {
+					
+				        // Get the target from the "data-target" attribute
+				        const target = el.dataset.target;
+				        const $target = document.getElementById(target);
+					
+				        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+				        el.classList.toggle('is-active');
+				        $target.classList.toggle('is-active');
+					
+				      });
+				    });
+				  }
+					
+				});
+				  
+				</script>
+		  	
+		  
+		  	<section class="content">
+			  	
+			  	<div class="main-message__container">
+				  	<h2 class="main-message">Wir lassen Ihre Träume wahr werden!</h2>
+			  	</div>
+			  	
+			  	<div class="heading__container">
+				  	<h2>Unsere <strong>Leistungen</strong></h2>
+				  	<hr class="heading__hr"> 
+				  	<h3 class="sub-heading">Wenn Qualität gefragt ist</h3>
+			  	</div>
+		  	
+				<article class="service-card">
+					
+					<div class="service-card__box">
+						
+						<img class="article__service" src="img/services_reparaturarbeiten.jpg" alt="#">
+							
+						<div class="service-card__content">
+								
+							<h3>Reparaturarbeiten</h3>
+								
+							<p>
+								Wir übernehmen sämtliche Reparaturarbeiten für Fliesen wie zum Beispiel
+							</p>
+								
+							<ul>
+								<li>Sanierungsarbeiten nach Rohrbrüchen</li>
+								<li>Tausch beschädigter Fliesen</li>
+							</ul>
+								
+							<p class="message">Kein Auftrag ist uns zu klein!<p>
+									
+						</div>
+													
+					</div>
+					
+				</article>
+				
+				<article class="service-card">
+					
+					<div class="service-card__box">
+					
+						<img class="article__service" src="img/services_wartungsfugen.jpg" alt="#">
+						
+						<div class="service-card__content">
+							
+							<h3>Wartungsfugen</h3>
+							
+							<p>
+								Für uns zählen auch die kleinen Dinge im Leben - und zwar durch und durch.<br/>
+								Das zeigt sich auch darin, dass wir - anders als viele andere Betriebe in unserer Braunche - auch Wartungsfugen (Silikonfugen) erneuern.
+							</p>
+							
+							<p class="message">Gerne nehmen wir uns Ihrer Fugen an.<p>
+													
+						</div>
+					
+					</div>
+					
+				</article>
+				
+				<article class="service-card">
+					
+					<div class="service-card__box">
+					
+						<img class="article__service" src="img/services_altbausanierung.jpg" alt="#">
+						
+						<div class="service-card__content">
+							
+							<h3>Altbausanierungen</h3>
+							
+							<p>
+								Wir haben uns auf Altbausanierungen spezialisiert. Egal ob es sich um
+							</p>
+							
+							<ul>
+								<li>schiefe Wände</li>
+								<li>unebene Böden oder</li>
+								<li>gerissene Estriche</li>
+							</ul>
+							
+							<p>
+								handelt, wir sind der richtige Ansprechpartner.
+							</p>
+							
+							<p class="message">Wir bereiten Ihr Heim fachgerecht für die Verlegung vor.<p>
+													
+						</div>
+					
+					</div>
+					
+				</article>
+				
+				<article class="service-card">
+					
+					<div class="service-card__box">
+					
+						<img class="article__service" src="img/services_baederumbau.jpg" alt="#">
+						
+						<div class="service-card__content">
+							
+							<h3>Bäderumbauten</h3>
+							
+							<p>
+								Um ihr Traumbad zu verwirklichen, werden sie bei uns von Beginn an professionell betreut.<br/>
+								Vom kostenlosen Erstgespräch bei Ihnen zu Hause bis hin zur Fertigstellung werden wir versuchen
+							</p>
+							
+							<p class="message">Ihre Wünsche bestmöglich zu erfüllen.<p>
+													
+						</div>
+					
+					</div>
+					
+				</article>
+				
+				<article class="service-card">
+					
+					<div class="service-card__box">
+					
+						<img class="article__service" src="img/services_verlegen-von-mosaiken.jpg" alt="#">
+						
+						<div class="service-card__content">
+							
+							<h3>Verlegen von Mosaiken bis Großformatfliesen</h3>
+							
+							<p>
+								Wir liefern und verlegen sämtliche Arten von Keramik in allen Wohnbereichen.<br/>
+								Mit der Vielzahl von verschiedenen Oberflächen und Optiken kann die Fliese in jedem Raum eingesetzt werden.
+							</p>
+													
+							<p class="message">Wir beraten Sie gerne!<p>
+													
+						</div>
+					
+					</div>
+					
+				</article>
+				
+				<article class="service-card">
+					
+					<div class="service-card__box">
+					
+						<img class="article__service" src="img/services_handel.jpg" alt="#">
+						
+						<div class="service-card__content">
+							
+							<h3>Handel mit Verlegematerialien und Fliesenzubehör</h3>
+							
+							<p>
+								Sie benötigen Fliesenkleber, Fugenmasse, Silikon, Abschlussschienen usw.? Kontaktieren Sie uns!<br/>
+								Wir haben für jeden Untergrund den passenden Systemaufbau von Verlegemateralien.
+							</p>
+							
+							<ul>
+								<li>Sanierungsarbeiten nach Rohrbrüchen</li>
+								<li>Tausch beschädigter Fliesen</li>
+							</ul>
+							
+							<p class="message">Denn geht nicht, gibt es nicht!<p>
+													
+						</div>
+					
+					</div>
+					
+				</article>
+				
+				<article class="service-card">
+					
+					<div class="service-card__box">
+					
+						<img class="article__service" src="img/services_steinverblender.jpg" alt="#">
+						
+						<div class="service-card__content">
+							
+							<h3>Verlegung von Steinverblendern</h3>
+							
+							<p>
+								Mit dem gezielten Einsatz von Steinverblendern kann man einzigartige Akzente in jedem Raum setzten.
+							</p>
+							
+							<p class="message">Überzeugen Sie sich selbst in unserer<p>
+								
+							<a class="button--red" href="#" target="_self">Galerie</a>
+													
+						</div>
+					
+					</div>
+					
+				</article>  
+		  	
+		  	
+			  	<section class="container container--darkgray">
+				  	
+				  	<hr class="container--darkgray__hr--blue">
+				  	
+				  	<div class="content__text">
+			  	
+				  		<p class="content__text--light">
+							Vom Erstkontakt bis zur Übergabe der geleisteten Arbeit  können Sie sich bei uns auf eine fachgerechte Kundenbetreuung verlassen. 
+							Eine Beratung vor Ort bei Ihnen zu Hause gehört hier selbstverständlich zu unserem Service.
+						</p>
+						
+						<p class="content__text--light">
+							Die Einhaltung von zugesagten Terminen hat dabei immer oberste Priorität – denn es gibt nichts schlimmeres als unzuverlässige Handwerker.
+						</p>
+		
+						<p class="content__text--light">
+							Gerade bei Bäderumbauten ist ein reibungsloser Ablauf notwendig, um die Zeitspanne der Arbeiten möglichst kurz zu halten. 
+							Hierfür können wir Ihnen auch gerne zuverlässige Partnerfirmen vermitteln.
+						</p>
+					
+				  	</div>
+			  	
+			  	</section>
+		  	
+			  	<div class="heading__container">
+				  	<h2>Fliesen <strong>Schauraum</strong></h2>
+				  	<hr class="heading__hr"> 
+				  	<h3 class="sub-heading">Direkt vor Ort und persönlich</h3>
+			  	</div>
+		  	
+			  	<div class="container image-container container__partner container--white">
+				  	
+				  	<img class="partner-logo" src="img/logo-fliesen-kuchner.svg" alt="Slider-Bild">
+				  	
+				  	<div class="container">
+				  	
+				  		<img class="partner-image partner-image--larger image_fullwidth" src="img/partner_kuchner-posing@2x.png" alt="Slider-Bild">
+				  	
+			  		</div>
+				  	
+			  	</div>
+		  	
+				<div class="container partner-services__container container--darkgray">
+					<ul class="partner-services__list">
+						<li>Fliesen und Naturstein</li>
+						<li>Stiegenanlagen</li>
+						<li>Balkonplatten</li>
+						<li>Schwimmbadumrandungen</li>
+						<li>Mauerabdeckungen</li>
+						<li>Fensterbretter</li>
+					</ul>
+				</div>  	
+		  	
+				<div class="container kontakt__container container--white">
+					
+					<h3 class="kontakt__heading">Kontakt</h3>
+					<hr class="h3__heading">
+					
+					<div class="partner-phone">
+						<p>Telefon<br/>
+							<a href="tel:004366473653455" target="_blank">+43 664 736 534 55</a>
+						</p>
+					</div>
+					
+					<div class="partner-mail">
+						<p>E-Mail<br/>
+							<a href="mailto:fliesen.kuchner@aon.at?subject=Website-Anfrage: " target="_blank">fliesen.kuchner@aon.at</a>
+						</p>
+					</div>
+					
+				</div>  
+				
+				<section>
+			  				  	
+			  	<div class="heading__container">
+				  	<h2>Unser <strong>Team</strong></h2>
+				  	<hr class="heading__hr"> 
+				  	<h3 class="sub-heading">Wir sind jederzeit gerne für Sie da</h3>
+			  	</div>
+			  	
+			  	<div class="container container--white">
+					<p class="main-message">Zusammen haben wir mehr als 100 Jahre echte Handwerks-Berufserfahrung</p>
+				</div>  
+				
+				<div class="grid-person">
+					
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_weissenboeck-christian.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">Christian <strong>Weißenböck</strong></p>
+							<p class="person-position">Gesch&auml;ftsf&uuml;hrer</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>sehr kreativ</li>
+								<li>gewissenhaft</li>
+								<li>detailorientiert</li>
+							</ul>
+						</div>
+					</div>
+								
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_hamersak-ratko.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">Ratko <strong>Hamersak</strong></p>
+							<p class="person-position">Facharbeiter</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>zuverl&auml;ssig</li>
+								<li>verantwortungsbewusst</li>
+								<li>gründlich</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_bauer-jakob.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">Jakob <strong>Bauer</strong></p>
+							<p class="person-position">Facharbeiter</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>lösungsorientiert</li>
+								<li>handwerkliches Geschick</li>
+								<li>pflichtbewusst</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_maric-mario.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">Mario <strong>Maric</strong></p>
+							<p class="person-position">Facharbeiter</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>leistungsorientiert</li>
+								<li>beharrlich</li>
+								<li>gewissenhaft</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_franzl-roman.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">Roman <strong>Franzl</strong></p>
+							<p class="person-position">Facharbeiter</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>kreativ</li>
+								<li>hohes Durchhaltevermögen</li>
+								<li>lösungsorientiert</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_rottensteiner-christian.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">Christian <strong>Rottensteiner</strong></p>
+							<p class="person-position">Facharbeiter</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>belastbar</li>
+								<li>teamfähig</li>
+								<li>Verantwortungsbereitschaft</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_puhr-alexander.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">Alexander <strong>Puhr</strong></p>
+							<p class="person-position">Lehrling</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>kommunikationsfähig</li>
+								<li>ausgesprochen offen</li>
+								<li>sehr beharrlich</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_etelbrunner-nico.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">Nico <strong>Etelbrunner</strong></p>
+							<p class="person-position">Lehrling</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>große Lernbereitschaft</li>
+								<li>hohes Engagement</li>
+								<li>sehr zuverlässig</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="card card--person">
+						
+						<div class="person-infos">
+							<img class="person-image" src="img/team_haider-andre.jpg" alt="Mitarbeiter"> 
+							<p class="person-name">André <strong>Haider</strong></p>
+							<p class="person-position">Lehrling</p>
+						</div>
+						
+						<div class="strength">
+							<p class="strength-heading">Pers&ouml;nliche St&auml;rken</p>
+							<ul class="strength-list">
+								<li>ausgesprochen zuverlässig</li>
+								<li>hohe Lernbereitschaft</li>
+								<li>großes Durchhaltevermögen</li>
+							</ul>
+						</div>
+					</div>
+				
+				</div>
+			  	
+			  	<div class="container container--transparent__hr--red">
+			  	
+				  	<div class="strength__text">
+					  	
+					  	<h2 class="heading--red">Gemeinsame <strong>Stärken</strong></h2>
+				  	
+					  	<p class="content__text--light">
+								Mit insgesamt 100 Jahren an Berufserfahrung sowie viel Tatendrang und Hingabe sehen wir uns auf folgenden Gebieten als die Spezialisten im Bezirk.
+						</p>
+				  	
+				  	</div>  
+				  	
+				  	
+				  	<div class="strength__bars">
+					  	
+					  	<div class="strength__bar--fliesenverlegung">Fliesenverlegung 100%</div>
+						
+						<div class="strength__bar--sanitaeranlagen">Beratung bei Sanitäranlagen 100%</div>
+						
+						<div class="strength__bar--bodenverlegung">Bodenverlegung 100%</div>
+					  	
+					</div> 
+					 	
+				
+			  	</div>	
+			  	
+				</section>
+				
+				
+				<section class="container container--transparent__hr--red">
+		  	
+		  			<div class="content__text content__contactinfos">
+
+		  				<div class="contact__phone">
+			  				
+			  				<h3 class="contactinfos__heading">Telefon</h3>
+			  				
+			  				<p class="content__text--light"><a href="tel:004369910629688">+43 699 106 29 688</a></p>
+			  				
+		  				</div>
+		  				
+		  				<div class="contact__mail">
+			  					  				
+			  				<h3 class="contactinfos__heading">E-Mail</h3>
+			  				
+			  				<p class="content__text--light"><a href="mailto:christian.weissenboeck@tmo.at">christian.weissenboeck@tmo.at</a></p>
+			  					
+		  				</div>
+		  				
+		  				<div class="contact__hours">
+			  							  				
+			  				<h3 class="contactinfos__heading">Geschäftszeiten</h3>
+			  				
+			  				<p class="content__text--light">Termine wochentags nach telefonischer Vereinbarung</p>
+			  				
+		  				</div>
+		  				
+		  				<div class="contact__address">
+			  							  				
+			  				<h3 class="contactinfos__heading">Adresse</h3>
+			  				
+			  				<p class="content__text--light">Tannenweg 1<br/>
+				  				2620 Ramplach</p>
+			  				
+		  				</div>
+		  				
+		  				<div class="contact__maps">
+			  							  							  				
+			  				<h3 class="contactinfos__heading">Anfahrt</h3>
+			  				
+			  				<div class="map-frame">
+				  				<iframe class="google-maps map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.345888626523!2d16.09114121610411!3d47.697121889712896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476dd106004e9e0d%3A0x8051042bb92acfd9!2sRamplach%201%2C%202620%20Ramplach!5e0!3m2!1sde!2sat!4v1597709220121!5m2!1sde!2sat" width="100%" height="100%" frameborder="1px" style="border:1px solid #707070;" allowfullscreen="" aria-hidden="false" tabindex="0">
+				  				</iframe>
+				  				
+				  			</div>
+			  				
+		  				</div>
+
+		  			</div>
+		  	
+		  		</section>
+
+		  	</section>
+		  
+		  
+			<footer class="container">
+				  
+				<div class="navbar__footer">
+					
+					<div class="copyright">
+						© 2020 - Fliesenverlegung Christian Weißenböck
+				  	</div>
+				  	
+				  	<nav class="footer__menu">
+						<ul>
+							<li class="footer__menu__item"><a href="#" target="_blank">Sitemap</a></li>
+							<li class="footer__menu__item"><a href="#" target="_blank">Impressum</a></li>
+							<li class="footer__menu__item"><a href="#" target="_blank">Datenschutz</a></li>
+						</ul>
+					</nav>	
+					
+			  	</div>  
+			  
+			  	<!--
+				  	<div class="footer__social-media">
+					
+					<ul>
+						<li class="footer__social-media__item"><a href="https://facebook.com" target="_blank"><i class="fa-facebook-f"></i></a></li>
+						<li class="footer__social-media__item"><a href="https://instagram.com" target="_blank"><i class="fa-instagram"></i></a></li>
+					</ul>
+				  
+			  	</div>
+			  	
+			  	-->		  
+					  
+			</footer>
+  
+  		</div>
+  		
+  		<!-- --- SLIDER CAROUSEL --- -->
+   	
+  	</body>
+  
+</html>
