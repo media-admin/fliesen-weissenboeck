@@ -183,6 +183,7 @@
   text-align: left;
   padding: 5px;
   font-size: 12px;
+  line-height: 1.0rem;
   margin: 0 15px 15px 15px;
 }
 
@@ -290,14 +291,18 @@
 }
 
 #dywc_info > .cookie .row .label {
-  width: 100px;
+  min-width: 100px;
   flex-grow: 0;
   flex-shrink: 0;
-
+  margin-bottom: 0;
+  margin-right: 0.5rem;
 }
 
 #dywc_info > .cookie .row .value {
   text-align: left;
+  font-size: 1.0rem;
+  font-weight: 300;
+  margin-left: 1.0rem;
 }
 
 #dywc_info .reject {
