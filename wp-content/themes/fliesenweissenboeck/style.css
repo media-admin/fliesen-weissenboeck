@@ -2132,7 +2132,7 @@ footer__social-media li a {
 
 
     .dots-container {
-	    top: 210px !important;
+	    top: 190px !important;
     }
 
 
@@ -3250,7 +3250,7 @@ footer__social-media li a {
 @media screen and (min-width: 1024px) {
 
 	.dots-container {
-		top: 190px !important;
+		top: 220px !important;
 	}
 
 }
