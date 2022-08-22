@@ -41,7 +41,7 @@
 #dywc > .content p {
   font-size: 14px;
   line-height: 16px;
-  font-weight: normal !important;
+  font-weight: light !important;
   margin: 15px 0;
   padding: 0;
 }

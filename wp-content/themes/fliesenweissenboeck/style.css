@@ -2942,7 +2942,6 @@ footer__social-media li a {
 		padding: 15px !important;
 	}
 
-
 	.button--load-more {
 		position: relative !important;
 		display: inline-block !important;
@@ -2956,10 +2955,11 @@ footer__social-media li a {
 		margin-top: 25px auto !important;
 		margin-bottom: 0px;
 		padding: 0.5em 1.0em !important;
+		z-index: 1 !important;
 	}
 
 	.button--load-more:hover {
-
+		cursor: pointer;
 	}
 
 	.home .route__map-wrapper {
